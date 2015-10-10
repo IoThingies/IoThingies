@@ -1,7 +1,19 @@
 <div>
-    <div>
+    <div gridster>
         <ul>
-            <li ng-repeat="device in dashboard.devices">{{device.name}}</li>
+            <li gridster-item
+                row="device.grid.position.x"
+                col="device.grid.position.y"
+                size-x="device.size.width"
+                size-y="device.size.height"
+                ng-repeat="device in dashboard.devices">
+                <md-card class="device-thingy">
+                    <div class="device-title">{{device.name}}</div>
+                    <md-card-content>
+                        bla bla
+                    </md-card-content>
+                </md-card>
+            </li>
         </ul>
     </div>
 
