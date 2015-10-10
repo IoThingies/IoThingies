@@ -8,9 +8,17 @@
                 size-y="device.size.height"
                 ng-repeat="device in dashboard.devices">
                 <md-card class="device-thingy">
-                    <div class="device-title">{{device.name}}</div>
+                    <md-toolbar>
+                        <div class="md-toolbar-tools">
+                            <span>{{device.name}}</span>
+                            <!-- fill up the space between left and right area -->
+                            <span flex></span>
+                            <md-button class="md-icon-button" ng-click="dashboard.removeDevice(device)" aria-label="Remove Device" tabindex="0" aria-hidden="false">
+                                <i class="material-icons ng-scope">close</i>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
                     <md-card-content>
-                        bla bla
                         <json-formatter json="device" open="1"></json-formatter>
                     </md-card-content>
                 </md-card>
@@ -18,6 +26,5 @@
         </ul>
     </div>
 
-    <button ng-click="dashboard.increase()">Click Me</button>
-    <p>You've pressed the button {{dashboard.counter}} times.</p>
+
 </div>

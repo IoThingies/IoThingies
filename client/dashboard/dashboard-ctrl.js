@@ -7,8 +7,7 @@ angular.module('IoThingies.dashboard').controller('DashboardCtrl', [
     const vm = this;
 
     vm.devices = $meteor.collection(Devices);
-    vm.counter = 0;
 
-    vm.increase = ()=> vm.counter++;
+    vm.removeDevice = (device) => vm.devices.remove(device);
   }
 ]);
