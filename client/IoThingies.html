@@ -1,14 +1,8 @@
 <head>
-  <title>IoThingies-tmp</title>
+  <title>IoThingies</title>
 </head>
 
-<body ng-app="IoThingies" ng-include="'dashboard-main.ng.html'" ng-controller="DashboardCtrl">
-  <h1>Welcome to Meteor!</h1>
+<body ng-app="IoThingies" ng-include="'client/dashboard/dashboard-main.ng.html'" ng-controller="DashboardCtrl">
 
-  {{> hello}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
