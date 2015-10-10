@@ -1,4 +1,7 @@
 <div>
+    <ul>
+        <li ng-repeat="device in dashboard.devices">{{device.name}}</li>
+    </ul>
     <button ng-click="dashboard.increase()">Click Me</button>
     <p>You've pressed the button {{dashboard.counter}} times.</p>
 </div>
