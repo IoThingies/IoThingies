@@ -5,5 +5,6 @@ angular.module('IoThingies', [
   'IoThingies.dashboard',
   'ngMaterial',
   'angular-meteor',
-  'ui.router'
+  'ui.router',
+  'gridster'
 ]);

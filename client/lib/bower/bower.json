@@ -1,0 +1,8 @@
+{
+  "name": "IoThingies",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular-gridster": "0.13.5"
+  },
+  "private": true
+}
