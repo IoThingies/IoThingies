@@ -1,7 +1,7 @@
 <div>
     <div>
         <ul>
-            <li ng-repeat="device in dashboard.devices">{{device.name}}</li>
+            <li ng-repeat="device in dashboard.devices"><json-formatter json="device" open="1"></json-formatter></li>
         </ul>
     </div>
 
