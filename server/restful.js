@@ -6,6 +6,7 @@ if (Meteor.isServer) {
     // Create a testing route
      Router.route('/api/testing', {where: 'server'})
         .get(function () {
+            console.log('rest endpoint touched at /api/testing');
            this.response.end('test complete' + '\n');
        });
 
