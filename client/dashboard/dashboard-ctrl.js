@@ -1,10 +1,17 @@
 /**
  * Created by naor on 10/10/15.
  */
-angular.module('IoThingies.dashboard').controller('DashboardCtrl', ['$scope', function ($scope) {
-  let x = 7;
-  $scope.counter = 0;
-  $scope.increase = function () {
-    $scope.counter++;
+angular.module('IoThingies.dashboard').controller('DashboardCtrl', [
+
+  function () {
+
+    var vm = this;
+
+
+    vm.counter = 0;
+
+    vm.increase = function () {
+      vm.counter++;
+    };
   }
-}]);
+]);
