@@ -25,3 +25,7 @@ meteorhacks:npm
 
 npm-container
 ernestorocha:sparkjs
+
+angular:angular-material
+angularui:angular-ui-router
+fourseven:scss

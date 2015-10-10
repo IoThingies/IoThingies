@@ -1,14 +1,9 @@
 <head>
-  <title>IoThingies-tmp</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>IoThingies</title>
 </head>
 
-<body ng-app="IoThingies" ng-include="'dashboard-main.ng.html'" ng-controller="DashboardCtrl">
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+<body ng-app="IoThingies">
+    <div ui-view layout="row" layout-fill></div>
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
