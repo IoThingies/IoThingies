@@ -1,10 +1,30 @@
 <div>
-    <div>
+    <div gridster>
         <ul>
-            <li ng-repeat="device in dashboard.devices">{{device.name}}</li>
+            <li gridster-item
+                row="device.grid.position.x"
+                col="device.grid.position.y"
+                size-x="device.size.width"
+                size-y="device.size.height"
+                ng-repeat="device in dashboard.devices">
+                <md-card class="device-thingy">
+                    <md-toolbar>
+                        <div class="md-toolbar-tools">
+                            <span>{{device.name}}</span>
+                            <!-- fill up the space between left and right area -->
+                            <span flex></span>
+                            <md-button class="md-icon-button" ng-click="dashboard.removeDevice(device)" aria-label="Remove Device" tabindex="0" aria-hidden="false">
+                                <i class="material-icons ng-scope">close</i>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+                    <md-card-content>
+                        <json-formatter json="device" open="1"></json-formatter>
+                    </md-card-content>
+                </md-card>
+            </li>
         </ul>
     </div>
 
-    <button ng-click="dashboard.increase()">Click Me</button>
-    <p>You've pressed the button {{dashboard.counter}} times.</p>
+
 </div>
