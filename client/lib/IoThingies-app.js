@@ -6,5 +6,6 @@ angular.module('IoThingies', [
   'ngMaterial',
   'angular-meteor',
   'ui.router',
-  'gridster'
+  'gridster',
+  'jsonFormatter'
 ]);
