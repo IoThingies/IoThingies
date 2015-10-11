@@ -8,5 +8,6 @@ angular.module('IoThingies', [
   'angular-meteor',
   'ui.router',
   'gridster',
-  'jsonFormatter'
+  'jsonFormatter',
+  'googlechart'
 ]);
