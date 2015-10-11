@@ -7,19 +7,31 @@
                 size-x="device.size.width"
                 size-y="device.size.height"
                 ng-repeat="device in dashboard.devices">
-                <md-card class="device-thingy">
+                <md-card class="device-thingy" ng-controller="DeviceWidgetCtrl as deviceWidget">
                     <md-toolbar>
                         <div class="md-toolbar-tools">
                             <span>{{device.name}}</span>
+                            &nbsp;&nbsp;
+                            <span class="side-note-text" ng-if="deviceWidget.hasReadings">Updated {{deviceWidget.timeAgo}}</span>
                             <!-- fill up the space between left and right area -->
                             <span flex></span>
-                            <md-button class="md-icon-button" ng-click="dashboard.removeDevice(device)" aria-label="Remove Device" tabindex="0" aria-hidden="false">
+                            <md-button class="md-icon-button" ng-click="deviceWidget.switchVis()" aria-label="Show Trend" tabindex="0" aria-hidden="false">
+                                <i class="material-icons ng-scope" ng-if="! deviceWidget.showingGraph">assessment</i>
+                                <i class="material-icons ng-scope" ng-if="deviceWidget.showingGraph">assignment</i>
+                            </md-button>
+                            <md-button class="md-icon-button" ng-click="dashboard.removeDevice(device)" aria-label="Remove Device" tabindex="1" aria-hidden="false">
                                 <i class="material-icons ng-scope">close</i>
                             </md-button>
                         </div>
                     </md-toolbar>
                     <md-card-content>
-                        <json-formatter json="device" open="1"></json-formatter>
+                        <div ng-if="deviceWidget.hasReadings" ng-include="deviceWidget.visTemplate">
+
+                        </div>
+                        <div ng-if="! deviceWidget.hasReadings">
+                            <h3 class="md-display-1">Waiting for data...</h3>
+                        </div>
+                        <!--<json-formatter json="deviceWidget.lastReading" open="1"></json-formatter>-->
                     </md-card-content>
                 </md-card>
             </li>

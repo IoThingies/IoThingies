@@ -3,9 +3,11 @@
  */
 angular.module('IoThingies', [
   'IoThingies.dashboard',
+  'IoThingies.createdevice',
   'ngMaterial',
   'angular-meteor',
   'ui.router',
   'gridster',
-  'jsonFormatter'
+  'jsonFormatter',
+  'googlechart'
 ]);
