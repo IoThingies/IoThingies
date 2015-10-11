@@ -25,6 +25,7 @@ ddp-common@1.2.1
 ddp-server@1.2.1
 deps@1.0.9
 diff-sequence@1.0.1
+dotansimha:angular-google-chart@0.0.11
 ecmascript@0.1.5
 ecmascript-collections@0.1.6
 ejson@1.0.7
@@ -60,6 +61,7 @@ minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
 mobile-status-bar@1.0.6
+momentjs:moment@2.10.6
 mongo@1.1.2
 mongo-id@1.0.1
 mquandalle:bower@1.5.2
@@ -78,6 +80,7 @@ session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
 standard-minifiers@1.0.1
+stevezhu:lodash@3.10.1
 templating@1.1.4
 templating-tools@1.0.0
 tracker@1.0.9

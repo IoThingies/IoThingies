@@ -1,4 +1,10 @@
 md-card.device-thingy {
   margin: 0;
   height: 100%;
+
+  md-card-content {
+    padding-bottom: 0;
+    height: 100%;
+    overflow-y: auto;
+  }
 }

@@ -28,7 +28,7 @@ $table-border-color:            #e0e0e0;
   border-spacing: 0;
   width: 100%;
   max-width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0.1rem;
   background-color: $table-bg;
   > thead,
   > tbody,
@@ -209,4 +209,10 @@ $table-border-color:            #e0e0e0;
       }
     }
   }
+}
+
+.side-note-text{
+  font-size: 12px;
+  font-style: italic;
+  color: #ccc;
 }

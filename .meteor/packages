@@ -30,3 +30,6 @@ angular:angular-material
 angularui:angular-ui-router
 fourseven:scss
 mquandalle:bower
+momentjs:moment
+stevezhu:lodash
+dotansimha:angular-google-chart
