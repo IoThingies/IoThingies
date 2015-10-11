@@ -1,9 +1,9 @@
 <md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left"
             class="md-whiteframe-z2 md-sidenav-left">
-    <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2">
+    <md-toolbar md-theme="custom" class="md-hue-1 md-whiteframe-z2 nudge">
         <md-button layout="row" layout-align="center center" class="md-toolbar-tools md-warn"
                    href="https://github.com/flatlogic/angular-material-dashboard">
-            <h1>AMD</h1>
+            <span class="nudge">IoT</span>
         </md-button>
     </md-toolbar>
     <md-button ng-repeat-start="item in vm.menuItems" layout="column" layout-align="center center"
@@ -25,7 +25,11 @@
 </md-sidenav>
 
 <div layout="column" flex>
+
     <md-toolbar layout="row" layout-align="end center">
+        <md-toolbar layout="row" layout-align="start center" class="fun">
+           <span class="fun">hingies</span>
+        </md-toolbar>
         <md-button hide-sm class="toolbar-button" aria-label="Search">
             <i class="material-icons">search</i>
         </md-button>
@@ -33,12 +37,13 @@
             <i class="material-icons">notifications</i>
             <span class="notifications-label">7</span>
         </md-button>
-        <md-button hide-sm class="toolbar-button" aria-label="Settings" ng-click="vm.showAlert()">
-            <i class="material-icons">settings</i>
+        <md-button hide-sm class="toolbar-button" aria-label="Add" ng-click="vm.showAlert()">
+            <i class="material-icons">add_circle</i>
         </md-button>
         <md-button hide-gt-sm ng-click="vm.toggleItemsList()" aria-label="Menu">
             <i class="material-icons">menu</i>
         </md-button>
+
     </md-toolbar>
 
     <md-content flex class="md-padding page-content">
@@ -50,7 +55,7 @@
             class="md-whiteframe-z2 md-sidenav-right">
     <md-toolbar layout="row" flex="80">
         <md-toolbar class="md-warn" layout="row" layout-align="center center">
-            <img class="img-circle" ng-src="assets/images/feynman.jpg">
+            <img class="img-circle" ng-src="feynman.jpg">
             <md-menu>
                 <md-button class="capitalize" ng-click="$mdOpenMenu()" aria-label="Open menu">
                     <span>Richard Feynman</span>
@@ -72,9 +77,45 @@
     <section>
         <md-toolbar md-theme="grey" class="md-hue-1">
             <div class="md-toolbar-tools">
-                <h3>MOAR STUFFS</h3>
+                <h3>RECENT</h3>
             </div>
         </md-toolbar>
-        <!--<div ng-include src="'app/views/partials/messages.html'"/>-->
+        <div class="messages">
+            <md-content class="messages-content">
+                <section>
+                    <md-subheader class="md-accent">New Devices</md-subheader>
+                    <md-list>
+                        <md-list-item class="md-3-line">
+                            <img class="md-avatar" ng-src="einstein.jpg">
+                            <div class="md-list-item-text">
+                                <h3>Thermometer</h3>
+                                <h4>Spark Photon</h4>
+                                <p>A new device has just been discovered!</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </section>
+
+
+
+                <section>
+                    <md-subheader class="md-warn">Problems reported</md-subheader>
+                    <md-list>
+                        <md-list-item class="md-3-line"
+                                      >
+                            <img class="md-avatar" ng-src="einstein.jpg">
+
+                            <div class="md-list-item-text">
+                                <h3>Motion Camera</h3>
+                                <h4>Raspberry</h4>
+
+                                <p>Your camera has been offline for more than 20 hours. Maybe worth investigating!</p>
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </section>
+
+            </md-content>
+        </div>
     </section>
 </md-sidenav>

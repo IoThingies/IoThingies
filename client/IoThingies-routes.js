@@ -24,7 +24,14 @@ angular.module('IoThingies')
           data: {
             title: 'Dashboard'
           }
-        });
+        })
+          .state('home.test', {
+            url: '/test',
+            templateUrl: 'client/static/dashboard-test.ng.html',
+            data: {
+              title: 'Dashboard'
+            }
+          });;
       //.state('home.profile', {
       //  url: '/profile',
       //  templateUrl: 'app/views/profile.html',

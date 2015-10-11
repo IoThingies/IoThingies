@@ -33,7 +33,6 @@ angular.module('IoThingies').controller('MainCtrl', [
     // Dialog #1 - Show simple alert dialog and cache
     // reference to dialog instance
     function showAlert() {
-      console.log('clicked!');
       $mdDialog.show({
         clickOutsideToClose: true,
         templateUrl: "client/createdevice/createdevice-main.ng.html",
@@ -107,7 +106,7 @@ angular.module('IoThingies').controller('MainCtrl', [
         $mdToast.simple()
           .content(title)
           .hideDelay(2000)
-          .position('top right')
+           .position('top right')
       );
     }
   }
