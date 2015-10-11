@@ -15,8 +15,8 @@ Meteor.startup(function () {
         console.log('Functions:', deviceApi.functions);
         console.log('Variables:', deviceApi.variables);
 
-        var getVar = Meteor.wrapAsync(deviceApi.getVariable, deviceApi);
-        var readings = Object.keys(deviceApi.variables).reduce(function (all, varName) {
+        const getVar = Meteor.wrapAsync(deviceApi.getVariable, deviceApi);
+        const readings = Object.keys(deviceApi.variables).reduce((all, varName) => {
           all[varName] = getVar(varName).result;
           return all;
         }, {});
@@ -32,8 +32,6 @@ Meteor.startup(function () {
         });
       }));
     });
-
-
   }, 5000);
 
 });
