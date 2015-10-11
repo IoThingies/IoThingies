@@ -9,7 +9,8 @@ angular.module('IoThingies').controller('MainCtrl', [
   '$q',
   '$state',
   '$mdToast',
-  function (/*navService,*/ $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast) {
+  '$mdDialog',
+  function (/*navService,*/ $mdSidenav, $mdBottomSheet, $log, $q, $state, $mdToast, $mdDialog) {
 
     var vm = this;
 
@@ -25,6 +26,23 @@ angular.module('IoThingies').controller('MainCtrl', [
     //  .then(function(menuItems) {
     //    vm.menuItems = [].concat(menuItems);
     //  });
+
+    console.log("yey");
+    vm.showAlert = showAlert;
+
+    // Dialog #1 - Show simple alert dialog and cache
+    // reference to dialog instance
+    function showAlert() {
+      console.log('clicked!');
+      $mdDialog.show({
+        clickOutsideToClose: true,
+        templateUrl: "client/createdevice/createdevice-main.ng.html",
+        controller: "CreateDeviceCtrl",
+        controllerAs: "createDeviceDialog"
+
+      });
+    }
+
 
     vm.menuItems = [
       {

@@ -3,6 +3,7 @@
  */
 angular.module('IoThingies', [
   'IoThingies.dashboard',
+  'IoThingies.createdevice',
   'ngMaterial',
   'angular-meteor',
   'ui.router',

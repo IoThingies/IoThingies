@@ -9,5 +9,7 @@ angular.module('IoThingies.dashboard').controller('DashboardCtrl', [
     vm.devices = $meteor.collection(Devices);
 
     vm.removeDevice = (device) => vm.devices.remove(device);
+
+
   }
 ]);
