@@ -20,7 +20,9 @@ function retrieveAllDataForUser(callback) {
         let loginPr = Spark.login({accessToken: device.config.accessToken});
 
         loginPr.then(
-            (token) => console.log('Particle cloud login successful with token: ', token),
+            (token) => {
+                // console.log('Particle cloud login successful with token: ', token)
+            },
             (err) => {
                 console.log('Particle login FAILED');
                 callback(err);
@@ -36,9 +38,9 @@ function retrieveAllDataForUser(callback) {
                 if (!deviceApi.connected) {
                     callback('Device ' + deviceApi.name + ' is not connected');
                 } else {
-                    console.log('Device name: ' + deviceApi.name);
-                    console.log('Functions:', deviceApi.functions);
-                    console.log('Variables:', deviceApi.variables);
+                    // console.log('Device name: ' + deviceApi.name);
+                    // console.log('Functions:', deviceApi.functions);
+                    // console.log('Variables:', deviceApi.variables);
 
                     // Using the variable names discovered get the sensor readings
                     const wrappedGetDeviceVariable = Meteor.wrapAsync(deviceApi.getVariable, deviceApi);
