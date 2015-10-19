@@ -7,10 +7,11 @@ let Api = new Restivus({
     prettyJSON: true
 });
 
-// Set up a route which has the device ID in the URL
+// Set up a route which has the device ID in the URL - TODO - add authentication
 Api.addRoute('device/:_id/data', {authRequired: false}, {
     post: function() {
-        let dev = Devices.findOne({_id: this.urlParams._id });
+        console.log('ID being passed on REST is: ' + this.urlParams._id);
+        let dev = Devices.findOne({"config.coreId": this.urlParams._id });
 
         // Check that we have a valid device on the URL
         if (dev) {
@@ -44,7 +45,7 @@ Api.addRoute('device/:_id/data', {authRequired: false}, {
                 headers: {
                     'Content-Type': 'text/plain'
                 },
-                body: 'Device not found: ' + id
+                body: 'Device not found: ' + dev._id
             };
         }
     }
