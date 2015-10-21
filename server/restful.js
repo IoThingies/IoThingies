@@ -10,6 +10,7 @@ let Api = new Restivus({
 // Set up a route which has the device ID in the URL - TODO - add authentication
 Api.addRoute('device/:_id/data', {authRequired: false}, {
     post: function() {
+        console.log(JSON.stringify(this.bodyParams));
         console.log('ID being passed on REST is: ' + this.urlParams._id);
         let dev = Devices.findOne({"config.coreId": this.urlParams._id });
 
@@ -25,6 +26,7 @@ Api.addRoute('device/:_id/data', {authRequired: false}, {
 
             readings.timestamp = Date.now();
 
+            //console.log(JSON.stringify(readings));
             console.log(JSON.stringify(readings));
 
             // Append the new readings to our Device object
