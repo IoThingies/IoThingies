@@ -1,20 +1,29 @@
 angular.module('IoThingies.createdevice').controller('CreateDeviceCtrl', [
-    '$meteor', '$mdDialog',
-    function ($meteor, $mdDialog) {
-        const vm = this;
+  '$scope', '$meteor', '$mdDialog',
+  function ($scope, $meteor, $mdDialog) {
+    const vm = this;
 
-        //vm.closeDialog = function() {
-        //    console.log('closebtn');
-        //
-        //    $mdDialog.hide();
-        //};
-        vm.closeDialog = closeDialog;
+    vm.device = {
+      config: {},
+      readings: []
+    };
+    //vm.closeDialog = function() {
+    //    console.log('closebtn');
+    //
+    //    $mdDialog.hide();
+    //};
+    vm.closeDialog = closeDialog;
 
-        // Dialog #1 - Show simple alert dialog and cache
-        // reference to dialog instance
-        function closeDialog() {
-            console.log('clicked!');
-            $mdDialog.hide();
-        }
+    vm.create = () => {
+      Devices.insert(vm.device);
+      $mdDialog.hide();
+    };
+
+    // Dialog #1 - Show simple alert dialog and cache
+    // reference to dialog instance
+    function closeDialog() {
+      console.log('clicked!');
+      $mdDialog.hide();
     }
+  }
 ]);

@@ -1,41 +1,45 @@
 <md-dialog>
-<md-dialog-content>
-
-    <div  layout="column">
-        <md-toolbar class="md-primary">
-            <h1 class="md-toolbar-tools">
-                Add a device
-            </h1>
-        </md-toolbar>
-        <md-content layout-padding>
-            <form name="projectForm">
-                <md-input-container>
-                    <label>Device Name</label>
-                    <input required name="description" ng-model="project.description">
-                    <div ng-messages="projectForm.description.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container>
-                    <label>Device ID</label>
-                    <input required name="clientName" ng-model="project.clientName">
-                    <div ng-messages="projectForm.clientName.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container>
-                    <label>Authentication token</label>
-                    <input required name="rate" ng-model="project.rate">
-                    <div ng-messages="projectForm.rate.$error">
-                        <div ng-message="required">This is required.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container layout-sm="column"  layout="row">
-                <md-button class="md-raised md-primary">Add Device</md-button> <md-button class="md-raised" ng-click="createDeviceDialog.closeDialog()">Cancel</md-button>
-                </md-input-container>
-            </form>
-        </md-content>
-    </div>
-
-  </md-dialog-content>
+    <md-dialog-content>
+        <div  layout="column">
+            <md-toolbar class="md-primary">
+                <h1 class="md-toolbar-tools">
+                    Add a device
+                </h1>
+            </md-toolbar>
+            <md-content layout-padding>
+                <form name="deviceForm">
+                    <h4 class="md-subhead">
+                        Fill all the fields
+                    </h4>
+                    <md-input-container>
+                        <label>Device Name</label>
+                        <input name="name" ng-model="createDeviceDialog.device.name" required/>
+                        <div ng-messages="deviceForm.name.$error" ng-show="deviceForm.name.$dirty">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Device ID</label>
+                        <input name="coreId" ng-model="createDeviceDialog.device.config.coreId" required/>
+                        <div ng-messages="deviceForm.coreId.$error" ng-show="deviceForm.coreId.$dirty">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container>
+                        <label>Authentication token</label>
+                        <input name="accessToken" ng-model="createDeviceDialog.device.config.accessToken" required/>
+                        <div ng-messages="deviceForm.accessToken.$error" ng-show="deviceForm.coreId.$dirty">
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container layout-sm="column"  layout="row">
+                        <md-button class="md-raised md-primary" ng-click="createDeviceDialog.create()" ng-disabled="deviceForm.$invalid">
+                            Submit
+                        </md-button>
+                        <md-button class="md-raised" ng-click="createDeviceDialog.closeDialog()">Cancel</md-button>
+                    </md-input-container>
+                </form>
+            </md-content>
+        </div>
+    </md-dialog-content>
 </md-dialog>
