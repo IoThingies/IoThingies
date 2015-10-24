@@ -6,6 +6,7 @@ angular.module('IoThingies', [
   'IoThingies.createdevice',
   'ngMaterial',
   'angular-meteor',
+  'ngMessages',
   'ui.router',
   'gridster',
   'jsonFormatter',

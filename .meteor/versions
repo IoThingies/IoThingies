@@ -3,6 +3,7 @@ angular:angular@1.4.7
 angular:angular-animate@1.4.7
 angular:angular-aria@1.4.7
 angular:angular-material@0.11.2
+angular:angular-messages@1.4.7
 angularui:angular-ui-router@0.2.15
 autopublish@1.0.4
 autoupdate@1.2.3
